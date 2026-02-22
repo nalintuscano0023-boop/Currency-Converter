@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced AI Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+    <div class="theme-toggle">
+        <button id="themeBtn">🌙 Dark Mode</button>
+    </div>
+
+    <div class="container">
+        <h1>💱 AI Currency Converter</h1>
+        
+        
+        <div class="settings-panel">
+            <label>🎙️ Voice Settings:</label>
+            <div class="voice-controls">
+                <select id="voiceType">
+                    <option value="male-en">Male - English</option>
+                    <option value="female-hi">Female - Hindi</option>
+                </select>
+                <button id="aiSpeakBtn" class="voice-btn">🔊 AI Speak</button>
+            </div>
+        </div>
+
+        
+        <div class="conversion-box">
+            <div class="currency-row">
+                <div class="currency-group">
+                    <label>From</label>
+                    <input type="number" id="amount" placeholder="Amount" value="1" min="0" step="0.01">
+                    <select id="fromCurrency">
+                        <option value="USD">USD - United States Dollar</option>
+                    </select>
+                </div>
+                
+                <button id="swap" class="swap-btn">⇄</button>
+                
+                <div class="currency-group">
+                    <label>To</label>
+                    <span id="convertedAmount" class="converted-amount">0</span>
+                    <select id="toCurrency">
+                        <option value="INR">INR - Indian Rupee</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="convert" class="convert-btn">Convert Now</button>
+        </div>
+
+        
+        <div class="loader" id="loader"></div>
+
+        
+        <div class="result-section">
+            <div class="result" id="result"></div>
+            <div class="exchange-rate" id="exchangeRate"></div>
+            <div class="historical-data" id="historicalData"></div>
+        </div>
+
+        
+        <div class="ai-analysis">
+            <div class="ai-result" id="aiResult"></div>
+            <div class="ai-trend" id="aiTrend"></div>
+            <div class="ai-prediction" id="aiPrediction"></div>
+        </div>
+
+        
+        <div class="recent-conversions">
+            <h3>📋 Recent Conversions</h3>
+            <div id="recentList" class="recent-list"></div>
+            <button id="clearHistory" class="clear-btn">Clear History</button>
+        </div>
+
+        
+        <div class="favorites">
+            <h3>⭐ Favorite Pairs</h3>
+            <div id="favoritesList" class="favorites-list"></div>
+        </div>
+
+        
+        <div class="chart-container">
+            <canvas id="rateChart"></canvas>
+        </div>
+    </div>
+
+    
+    <script src="config.js"></script>
+    <script src="api.js"></script>
+    <script src="speech.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
