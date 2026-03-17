@@ -36,7 +36,7 @@ class CurrencyAPI {
                 throw new Error('No rates data in response');
             }
             
-            // Cache the result
+            
             this.cache[cacheKey] = {
                 data: data.rates,
                 timestamp: Date.now()
